@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>HTML</title>
+  <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <style>
+  .container {
+    width: 600px;
+    margin: 0px auto;
+  }
+  </style>
+</head>
+<body>
+  <div class="container">
+  <h1>매니저 정보</h1>
+  {{#if detail}}
+  <form class="form-horizontal" action="update.do" method="post">
+  {{else}}
+  <form class="form-horizontal" action="add.do" method="post">
+  {{/if}}
+  {{#if detail}}
+
+<div class="form-group bit-view">
+  <label class="col-sm-2 control-label">번호</label>
+  <div class="col-sm-10">
+    <input type="hidden" name="no" value="{{data.mno}}">
+    <p class="form-control-static" id="fi-no">{{data.mno}}</p>
+  </div>
+</div>
+  {{/if}}
+  <div class="form-group">
+    <label for="fi-email" class="col-sm-2 control-label">이메일</label>
+    <div class="col-sm-7">
+      <input type="email" class="form-control" name="email" id="fi-email"
+      placeholder="이메일" value="{{data.email}}">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="fi-name" class="col-sm-2 control-label">이름</label>
+    <div class="col-sm-4">
+      <input type="text" class="form-control" name="name"
+       id="fi-name" placeholder="이름" value="{{data.name}}">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="fi-tel" class="col-sm-2 control-label">전화번호</label>
+    <div class="col-sm-4">
+      <input type="text" class="form-control" name="tel"
+      id="fi-tel" placeholder="전화번호" value="{{data.tel}}">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="fi-password" class="col-sm-2 control-label">암호</label>
+    <div class="col-sm-4">
+      <input type="password" class="form-control" name="password"
+      id="fi-password" placeholder="암호" value="{{data.password}}">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="fi-posi" class="col-sm-2 control-label">직급</label>
+    <div class="col-sm-4">
+      <input type="text" class="form-control" name="position"
+      id="fi-posi" placeholder="직급" value="{{data.posi}}">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="fi-fax" class="col-sm-2 control-label">팩스</label>
+    <div class="col-sm-4">
+      <input type="text" class="form-control" name="fax"
+      id="fi-fax" placeholder="팩스" value="{{data.fax}}">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="fi-path" class="col-sm-2 control-label">사진파일경로</label>
+    <div class="col-sm-4">
+      <input type="text" class="form-control" name="path"
+      id="fi-path" placeholder="사진파일경로" value="{{data.path}}">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+  {{#if detail}}
+      <button type="submit" class="btn btn-primary bit-view" id="upd-btn">변경</button>
+      <a href="delete.do?no={{data.mno}}" class="btn btn-primary bit-view" id="del-btn">삭제</a>
+  {{else}}
+      <button type="submit" class="btn btn-primary bit-new" id="add-btn">추가</button>
+  {{/if}}
+      <a href="list.do" class="btn btn-primary" id="lst-btn">목록</a>
+    </div>
+  </div>
+</form>
+</div>
+
+</script>
+</body>
+</html>
+
+
+
+
+
+<!-- -->
