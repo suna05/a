@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>HTML</title>
+  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <style>
+  
+  div {
+  	margine: 5px 0px; 
+  }
+     
+  h1 {
+  	margin: 0 0 10px 0;
+   	text-align: center;
+  	font-size: 180%;
+  }  
+  
+  .container {
+   	border: 1px solid gray;
+    width: 400px;
+    margin: 10px auto;
+    padding: 10px 15px;
+  }
+  
+  #messageBox {
+  	width: 360px; 
+  	height : 300px;
+  	overflow: scroll;
+  }
+  
+  #message {
+  	width: 300px;  	
+  }
+  
+  #host {
+  	width: 130px;  	
+  }
+  
+  #port {
+  	width: 80px;
+  }
+  
+  #alias {
+  	width: 90px;
+  }
+  
+  ul {
+	  list-style: none;
+	  margin: 0;
+	  padding: 0;
+	}
+	
+	ul li{
+	  display:inline-block;
+	  clear: both;
+	  padding: 10px;
+	  border-radius: 30px;
+	  margin-bottom: 2px;
+	  font-family: Helvetica, Arial, sans-serif;
+	}
+	
+	.him{
+	  background: #eee;
+	  float: left;
+	}
+	
+	.me{
+	  float: right;
+	  background: #0084ff;
+	  color: #fff;
+	}
+	
+	.him + .me{
+	  border-bottom-right-radius: 5px;
+	}
+	
+	.me + .me{
+	  border-top-right-radius: 5px;
+	  border-bottom-right-radius: 5px;
+	}
+	
+	.me:last-of-type {
+	  border-bottom-right-radius: 30px;
+	}
+  
+  
+  
+  
+  </style>
+</head>
+<body>
+<div class="container">
+<h1>비트 메신저</h1>
+<ul id = "messageBox">
+</ul>
+
+
+<div>
+<input id = "message" type="text"> 
+<button id="sendBtn" type="button">보내기</button>
+</div>
+<br>
+
+<div>
+<input id="host" type="text" placeholder="서버" value="localhost"> 
+<input id="port" type="text" placeholder="포트" value="8888">
+<input id="alias" type="text" placeholder="별명" value="선아">
+<button id="connectBtn" type="button">연결</button>
+</div>
+
+
+
+</div>
+
+<script src="index.js"></script>
+
+</body>
+</html>
+
+
